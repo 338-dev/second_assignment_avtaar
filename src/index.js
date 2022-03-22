@@ -10,20 +10,28 @@ import Register from './Components/Register/Register.component';
 
 
 const Index = () => {
-  const user=firebase.auth().currentUser;
+  var auth=firebase.auth();
   const navigate = useNavigate();
+
+
   useEffect(() => {
-    if(user)
-    {
-        navigate("/app")
-    }
-  }, [user])
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        navigate("/")
+      }
+      else{
+        navigate("/login")
+      }
+    })
+    
+  }, [])
+  
   
   return(
     
       <Routes>
           <Route path="/app" element={<App />}/>
-          <Route index element={<Login />}/>
+          <Route path="/login" element={<Login />}/>
           <Route path="/register" element={<Register />}/>
 
       </Routes>
