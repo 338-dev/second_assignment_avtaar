@@ -21,7 +21,7 @@ function App() {
 
   const logout=()=>{
     firebase.auth().signOut()
-    navigate("/")
+    navigate("/login")
     
   }
 
