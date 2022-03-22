@@ -180,7 +180,7 @@ onChange={(e)=>{setuserDob(e.target.value)}}/>
   <div class="col-12">
     <button type="submit" class="btn btn-primary" onClick={()=>onSubmit()}>Register</button>
   </div>
-   <small>    <NavLink to="/"> Already registered?</NavLink></small>
+   <small>    <NavLink to="/login"> Already registered?</NavLink></small>
    <div className="message">
   
           {errorState.length > 0 && <Message error >
